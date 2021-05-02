@@ -58,3 +58,29 @@ char *reverse(char *strToReverse){
 	}
 	return reverseResult;
 }
+bool searchVertical(char *strCase){
+	int count = 0;
+	for (int i=0; i<15; i++){
+		char *holdwords =(char *)malloc(31);
+		strcpy(holdwords,getWordVertical(i));
+		strcat(holdwords,reverse(holdwords));
+		for(int j=0; j<strlen(holdwords); j++){
+			if(strCase[count]==holdwords[j]){
+				count++;
+				
+			}
+			else if (holdwords[j]==strCase[0]){
+				count =1;
+			}
+		else{
+			count =0;
+		}
+		if(count ==strlen(strCase)){
+			return true;	
+		}
+		
+		
+		}
+	})
+	return false;
+}
