@@ -53,13 +53,13 @@ char *getWordVertical(int columnIndex){
 
 char *reverse(char *strToReverse){
 	char *reverseResult = (char *) malloc(strlen(strToReverse));
-	for(int i = 0; i < strlen(strToReverse); i++){
+	for(unsigned int i = 0; i < strlen(strToReverse); i++){
 		reverseResult[i] = strToReverse[strlen(strToReverse) - 1 - i];
 	}
 	return reverseResult;
 }
 bool searchVertical(char *strCase){
-	int count = 0;
+	unsigned int count = 0;
 	for (int i=0; i<15; i++){
 		char *holdwords =(char *)malloc(31);
 		strcpy(holdwords,getWordVertical(i));
@@ -85,12 +85,12 @@ bool searchVertical(char *strCase){
 	return false;
 }
 bool searchHorizontal(char *strCase){
-	int count = 0;
+	unsigned int count = 0;
 	for(int i = 0; i < 15; i++){
 		char *holdWords = (char *) malloc(31);
 		strcpy(holdWords, words[i]);
 		strcat(holdWords, reverse(holdWords));
-		for(int j = 0; j < strlen(holdWords); j++){
+		for(unsigned int j = 0; j < strlen(holdWords); j++){
 			if(strCase[count] == holdWords[j]){
 				count++;
 			}
