@@ -81,6 +81,30 @@ bool searchVertical(char *strCase){
 		
 		
 		}
-	})
+	}
+	return false;
+}
+bool searchHorizontal(char *strCase){
+	int count = 0;
+	for(int i = 0; i < 15; i++){
+		char *holdWords = (char *) malloc(31);
+		strcpy(holdWords, words[i]);
+		strcat(holdWords, reverse(holdWords));
+		for(int j = 0; j < strlen(holdWords); j++){
+			if(strCase[count] == holdWords[j]){
+				count++;
+			}
+			else if(holdWords[j] == strCase[0]){
+				count = 1;
+			}
+			else{
+				count = 0;
+			}
+			
+			if(count == strlen(strCase)){
+				return true;
+			}
+		}
+	}
 	return false;
 }
