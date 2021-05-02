@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <stdlib.h>
-
 using namespace std;
+
 const int cols = 16, rows = 15;
 
 char words[rows][cols] = {	"tgbwwinterwsesn",
@@ -24,24 +24,23 @@ char words[rows][cols] = {	"tgbwwinterwsesn",
 char *getWordVertical(int columnIndex);
 char *reverse(char *strToReverse);
 bool searchVertical(char *strCase);
-bool searchHorizontal(char *);
+bool searchHorizontal(char *strCase);
 
-int main()
-{
-    char word[16];
-    int n;
-    cin >> n;
-    cin.ignore(1, '\n');
-    for (int i=0;i<n;i++){
-        cin.getline(word,16,'\n');
-        if (searchVertical(word) || searchHorizontal(word)){
-        	cout << "Ada\n";
+int main(){
+	char word[16];
+	int n;
+	cin >> n;
+	cin.ignore(1, '\n');
+	for(int i = 0; i < n; i++){
+		cin.getline(word, 16, '\n');
+		if(searchVertical(word) || searchHorizontal(word)){
+			cout << "Ada\n";
 		}
-        else{
-        	cout << "Tidak Ada\n";
+		else{
+			cout << "Tidak Ada\n";
 		}
-    }
-    return 0;
+	}
+	return 0;
 }
 
 char *getWordVertical(int columnIndex){
