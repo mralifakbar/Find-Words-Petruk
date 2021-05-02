@@ -21,8 +21,8 @@ const int cols = 16, rows = 15;
                             "pdcrzmsngrdnrpz",
                             "ohnkzwaterjgtra"};
 
-char *getWordVertical(int);
-char *reverse(char *);
+char *getWordVertical(int columnIndex);
+char *reverse(char *strToReverse);
 bool searchVertical(char *);
 bool searchHorizontal(char *);
 
@@ -42,4 +42,12 @@ int main()
 		}
     }
     return 0;
+}
+
+char *getWordVertical(int columnIndex){
+	char *verticalWord = (char *) malloc(16);
+	for(int i = 0; i < 15; i++){
+		verticalWord[i] = words[i][columnIndex];
+	}
+	return verticalWord;
 }
